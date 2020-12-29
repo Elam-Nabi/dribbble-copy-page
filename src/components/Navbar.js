@@ -44,8 +44,8 @@ export default Navbar;
 
 const NavLink = styled(Link)``;
 const Nav = styled.div`
-  margin-left: -50px;
   margin-top: 20px;
+  left: 100px;
   ul {
     display: flex;
     justify-content: space-evenly;
@@ -56,7 +56,7 @@ const Nav = styled.div`
     li:nth-child(5) {
       color: #fff;
       position: absolute;
-      right: 160px;
+      right: 100px;
       font-size: 22px;
     }
 
@@ -64,12 +64,16 @@ const Nav = styled.div`
       right: 40px;
       color: #fff;
       position: absolute;
-      right: 135px;
+      right: 75px;
       font-size: 22px;
     }
     a {
       text-decoration: none;
       color: #b5b6b8;
+      transition:all 0.4s ease-in-out;
+      &:hover {
+        color:#fff;
+      }
     }
   }
 

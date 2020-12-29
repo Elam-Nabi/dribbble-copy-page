@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
 
@@ -16,9 +16,20 @@ const Home = () => {
         </p>
         <button className="buy-btn">Buy now</button>
         <button className="icon-btn">
-          <IoMdHeartEmpty />
+          <IoMdHeartEmpty class="Icon-heart" />
         </button>
       </section>
+      <aside>
+        <div className="silver">
+          <h5>Silver</h5>
+        </div>
+        <div className="pink">
+          <h5>Pink</h5>
+        </div>
+        <div className="gray">
+          <h5>Pace Gray</h5>
+        </div>
+      </aside>
     </Div>
   );
 };
@@ -31,7 +42,8 @@ const Div = styled.div`
   img {
     width: 350px;
     position: absolute;
-    left: 80px;
+    left: 200px;
+    top: 150px;
     border-radius: 200px;
     border: 1px solid #626367;
     cursor: pointer;
@@ -45,38 +57,88 @@ const Div = styled.div`
 
   section {
     position: absolute;
-    right: 150px;
+    right: 200px;
+    top: 150px;
     h1 {
       color: #fff;
       font-weight: bolder;
-      font-size: 3.3rem;
+      font-size: 3.7rem;
       span {
         display: block;
       }
     }
 
     p {
+      color: #abacae;
       span {
         display: block;
       }
     }
-  }
+    .buy-btn {
+      height: 50px;
+      width: 200px;
+      outline: none;
+      color: #494a4d;
+      background: #f2f1ef;
+      cursor: pointer;
+      border-radius: 20px;
+      border: none;
+      transition: all 0.4s ease-in-out;
+      font-size: 18px;
+      font-weight: bolder;
 
-  .buy-btn {
-    height: 50px;
-    width: 200px;
-    outline: none;
-    color: #494a4d;
-    background: #fff;
-    cursor: pointer;
-    border-radius: 20px;
-    border: none;
-    transition: all 0.4s ease-in-out;
-    font-size: 18px;
-    font-weight: bolder;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
 
-    &:hover {
-      box-shadow: 3px 3px silver;
+    .icon-btn {
+      position: relative;
+      top: 10px;
+      left: 20px;
+      height: 50px;
+      width: 85px;
+      background: transparent;
+      border-radius: 25px;
+      outline: none;
+      border: 2px solid #fff;
+    }
+
+    .Icon-heart {
+      color: #fff;
+      font-size: 32px;
+      margin-top: 5px;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    aside {
+      position: absolute;
+      .silver {
+        color: #b5b6b8;
+        font-size: 22px;
+        h5 {
+          color: #b5b6b8;
+          font-size: 22px;
+        }
+      }
+
+      .pink {
+        h5 {
+          color: #b5b6b8;
+          font-size: 22px;
+        }
+      }
+
+      .gray {
+        h5 {
+          color: #b5b6b8;
+          font-size: 22px;
+        }
+      }
     }
   }
 `;
