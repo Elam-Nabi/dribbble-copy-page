@@ -2,13 +2,45 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
 
+import SilverPage from "../components/SilverPage";
+
 const Home = () => {
+  const [silver, setSilver] = useState(false);
+
+  const handleSilver = () => {
+    setSilver(!silver);
+  };
+
+  const closeImage = () => {
+    setSilver(false);
+  };
+
   return (
     <Div>
-      <img src={"/img/hörlurar.png"} alt="" />
+      {silver ? <SilverPage closeImage={closeImage} /> : null}
+      <Img
+        src={"/img/silverphones.png"}
+        alt=""
+        onClick={() => handleSilver()}
+      />
+      <Section>
+        <div className="silver">
+          <img src={"/img/silver.png"} alt="" />
+          <h5>Silver</h5>
+        </div>
+        <div className="pink">
+          <img src={"/img/pink.png"} alt="" />
+          <h5>Pink</h5>
+        </div>
+        <div className="gray">
+          <img src={"/img/gray.png"} alt="" />
+          <h5>Pace Gray</h5>
+        </div>
+      </Section>
       <section>
         <h1>
-          AirPods Max <span>True Apple</span>
+          AirPods Max
+          <span>True Apple</span>
         </h1>
         <p>
           a perfect balance of exhilarating high-fidelity audio{" "}
@@ -19,17 +51,6 @@ const Home = () => {
           <IoMdHeartEmpty class="Icon-heart" />
         </button>
       </section>
-      <aside>
-        <div className="silver">
-          <h5>Silver</h5>
-        </div>
-        <div className="pink">
-          <h5>Pink</h5>
-        </div>
-        <div className="gray">
-          <h5>Pace Gray</h5>
-        </div>
-      </aside>
     </Div>
   );
 };
@@ -39,30 +60,14 @@ export default Home;
 const Div = styled.div`
   display: flex;
 
-  img {
-    width: 350px;
-    position: absolute;
-    left: 200px;
-    top: 150px;
-    border-radius: 200px;
-    border: 1px solid #626367;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-
-    &:hover {
-      box-shadow: 3px 5px 3px 5px #000;
-      transform: scale(1.1);
-    }
-  }
-
   section {
     position: absolute;
-    right: 200px;
+    right: 150px;
     top: 150px;
     h1 {
       color: #fff;
       font-weight: bolder;
-      font-size: 3.7rem;
+      font-size: 4.2rem;
       span {
         display: block;
       }
@@ -74,7 +79,15 @@ const Div = styled.div`
         display: block;
       }
     }
+
+    h1,
+    p {
+      position: relative;
+      bottom: 30px;
+    }
+
     .buy-btn {
+      position: relative;
       height: 50px;
       width: 200px;
       outline: none;
@@ -114,31 +127,50 @@ const Div = styled.div`
         color: red;
       }
     }
+  }
+`;
 
-    aside {
-      position: absolute;
-      .silver {
-        color: #b5b6b8;
-        font-size: 22px;
-        h5 {
-          color: #b5b6b8;
-          font-size: 22px;
-        }
-      }
+const Img = styled.img`
+  width: 390px;
+  position: absolute;
+  left: 155px;
+  top: 100px;
+  border-radius: 200px;
+  border: 1px solid #626367;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
 
-      .pink {
-        h5 {
-          color: #b5b6b8;
-          font-size: 22px;
-        }
-      }
+  &:hover {
+    box-shadow: 3px 5px 3px 5px #000;
+    transform: scale(1.1);
+  }
+`;
 
-      .gray {
-        h5 {
-          color: #b5b6b8;
-          font-size: 22px;
-        }
+const Section = styled.header`
+  z-index: 1;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  right: 600px;
+  top: 150px;
+
+  div {
+    img {
+      border-radius: 50%;
+      width: 60px;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        opacity: 0.7;
       }
+    }
+    h5 {
+      color: #b5b6b8;
+      font-size: 20px;
+      font-weight: 500;
     }
   }
 `;
