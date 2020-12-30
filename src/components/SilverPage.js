@@ -8,7 +8,7 @@ const SilverPage = ({ closeImage }) => {
     <Div>
       <MdClose
         onClick={() => closeImage()}
-        style={{ fontSize: "40px" }}
+        style={{ fontSize: "30px" }}
         className="close-btn"
       />
       <motion.img
@@ -37,7 +37,7 @@ const Div = styled.div`
     background: transparent;
     position: absolute;
     right: 450px;
-    top: 25px;
+    top: 30px;
     z-index: 3;
     color: #fff;
     cursor: pointer;
@@ -56,7 +56,7 @@ const Div = styled.div`
     border-radius: 3em;
     backdrop-filter: blur(10px);
     background-clip: padding-box;
-    border: solid 0.3px gainsboro;
+    border: solid 0.3px #000;
     background: rgba(255, 255, 255, 0.2);
   }
 `;

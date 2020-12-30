@@ -1,12 +1,22 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { BsPlay } from "react-icons/bs";
 
 import SilverPage from "../components/SilverPage";
+import VideoPage from "../components/VideoPage";
 import { useHooks } from "../useHooks";
 
 const Home = () => {
-  const { silver, count, addLikes, handleSilver, closeImage } = useHooks();
+  const {
+    silver,
+    count,
+    addLikes,
+    handleSilver,
+    closeImage,
+    video,
+    watchVideo,
+  } = useHooks();
 
   useEffect(() => console.log(count), [count]);
 
@@ -14,6 +24,7 @@ const Home = () => {
     <Div>
       <h4 className="likes-count">{count}</h4>
       {silver ? <SilverPage closeImage={closeImage} /> : null}
+      {video ? <VideoPage /> : null}
       <Img
         src={"/img/silverphones.png"}
         alt=""
@@ -43,6 +54,9 @@ const Home = () => {
           <span>and the effortless magic of AirPods.</span>
         </p>
         <button className="buy-btn">Buy now</button>
+        <button className="video-btn" onClick={() => watchVideo()}>
+          <BsPlay className="icon-play" />
+        </button>
         <button className="icon-btn" onClick={() => addLikes()}>
           <IoMdHeartEmpty className="Icon-heart" />
         </button>
@@ -63,12 +77,13 @@ const Div = styled.div`
     background: #fff;
     border: 0.3px solid gainsboro;
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     font-size: 12px;
     font-weight: bold;
     right: 160px;
-    top: 5px;
+    top: 43px;
+    clip-path: polygon(50% 0, 100% 50%, 50% 700%, 0 50%);
   }
 
   section {
@@ -126,6 +141,24 @@ const Div = styled.div`
       border-radius: 25px;
       outline: none;
       border: 2px solid #fff;
+      cursor: pointer;
+    }
+
+    .video-btn {
+      position: relative;
+      height: 50px;
+      width: 85px;
+      top: 15px;
+      left: 10px;
+      border-radius: 25px;
+      background: transparent;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+
+    .icon-play {
+      color: #fff;
+      font-size: 45px;
     }
 
     .Icon-heart {
@@ -152,7 +185,6 @@ const Img = styled.img`
   transition: all 0.4s ease-in-out;
 
   &:hover {
-    box-shadow: 1px 1px 1px 1px #413d3d;
     transform: scale(1.1);
     bottom: 20px;
   }

@@ -12,10 +12,13 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   const [silver, setSilver] = useState(false);
+  const [video, setVideo] = useState(false);
   const [count, setCount] = useState(0);
 
   return (
-    <GlobalContext.Provider value={{ silver, setSilver, count, setCount }}>
+    <GlobalContext.Provider
+      value={{ silver, setSilver, count, setCount, video, setVideo }}
+    >
       <Router>
         <AnimatePresence>
           <Navbar />

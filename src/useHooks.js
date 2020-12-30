@@ -2,7 +2,7 @@ import {useContext} from 'react';
 import { GlobalContext } from './useContext';
 
 export const useHooks = () => {
-    const {  silver, setSilver, count, setCount } = useContext(GlobalContext)
+    const {  silver, setSilver, count, setCount, video, setVideo } = useContext(GlobalContext)
 
     const addLikes = () => {
     setCount(count + 1);
@@ -16,7 +16,9 @@ export const useHooks = () => {
     setSilver(false);
   };
 
-
+const watchVideo = () => {
+  setVideo(!video);
+}
 
 
     return {
@@ -26,7 +28,8 @@ export const useHooks = () => {
         setCount,
         addLikes,
         handleSilver,
-        closeImage
+        closeImage, 
+        watchVideo
     }
 
 }
