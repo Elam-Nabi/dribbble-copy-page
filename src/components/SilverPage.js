@@ -1,32 +1,62 @@
-import React from 'react';
-import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 import { MdClose } from "react-icons/md";
 
-const SilverPage = ({closeImage}) => {
-    return (
-        <Div>
-         <MdClose onClick={() => closeImage()} style={{ fontSize: "40px" }} />
-            <img src={"/img/silverphones.png"} alt="" />
-        </Div>
-    )
-}
+const SilverPage = ({ closeImage }) => {
+  return (
+    <Div>
+      <MdClose
+        onClick={() => closeImage()}
+        style={{ fontSize: "40px" }}
+        className="close-btn"
+      />
+      <motion.img
+        src={"/img/silverphones.png"}
+        alt=""
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ type: "spring", damping: 30 }}
+      />
+    </Div>
+  );
+};
 
-export default SilverPage
-
+export default SilverPage;
 
 const Div = styled.div`
-z-index:2;
-padding:0;
-margin:0;
-box-sizing:border-box;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
 
-position:absolute;
+  .close-btn {
+    background: transparent;
+    position: absolute;
+    right: 450px;
+    top: 25px;
+    z-index: 3;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
 
-img {
-width:500px;
-position:relative;
-left:350px;
-}
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 
-`
+  img {
+    width: 500px;
+    position: absolute;
+    left: 350px;
+    top: 20px;
+    border-radius: 3em;
+    backdrop-filter: blur(10px);
+    background-clip: padding-box;
+    border: solid 0.3px gainsboro;
+    background: rgba(255, 255, 255, 0.2);
+  }
+`;
