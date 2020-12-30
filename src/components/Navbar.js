@@ -45,18 +45,20 @@ export default Navbar;
 const NavLink = styled(Link)``;
 const Nav = styled.div`
   margin-top: 20px;
-  left: 100px;
+  position: fixed;
+  left: 180px;
   ul {
     display: flex;
-    justify-content: space-evenly;
+
     li {
       list-style: none;
+      padding-right: 50px;
     }
 
     li:nth-child(5) {
       color: #fff;
       position: absolute;
-      right: 100px;
+      left: 920px;
       font-size: 22px;
     }
 
@@ -64,17 +66,22 @@ const Nav = styled.div`
       right: 40px;
       color: #fff;
       position: absolute;
-      right: 75px;
+      left: 950px;
       font-size: 22px;
     }
     a {
       text-decoration: none;
       color: #b5b6b8;
-      transition:all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
       &:hover {
-        color:#fff;
+        color: #fff;
       }
     }
+  }
+
+  h1 {
+    color: red;
+    z-index: 3;
   }
 
   .active {

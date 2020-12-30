@@ -1,22 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
 
 import SilverPage from "../components/SilverPage";
+import { useHooks } from "../useHooks";
 
 const Home = () => {
-  const [silver, setSilver] = useState(false);
+  const { silver, count, addLikes, handleSilver, closeImage } = useHooks();
 
-  const handleSilver = () => {
-    setSilver(!silver);
-  };
-
-  const closeImage = () => {
-    setSilver(false);
-  };
+  useEffect(() => console.log(count), [count]);
 
   return (
     <Div>
+      <h4 className="likes-count">{count}</h4>
       {silver ? <SilverPage closeImage={closeImage} /> : null}
       <Img
         src={"/img/silverphones.png"}
@@ -47,8 +43,8 @@ const Home = () => {
           <span>and the effortless magic of AirPods.</span>
         </p>
         <button className="buy-btn">Buy now</button>
-        <button className="icon-btn">
-          <IoMdHeartEmpty class="Icon-heart" />
+        <button className="icon-btn" onClick={() => addLikes()}>
+          <IoMdHeartEmpty className="Icon-heart" />
         </button>
       </section>
     </Div>
@@ -60,9 +56,24 @@ export default Home;
 const Div = styled.div`
   display: flex;
 
+  .likes-count {
+    position: absolute;
+    text-align: center;
+    color: red;
+    background: #fff;
+    border: 0.3px solid gainsboro;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    right: 160px;
+    top: 5px;
+  }
+
   section {
     position: absolute;
-    right: 150px;
+    right: 130px;
     top: 150px;
     h1 {
       color: #fff;
@@ -141,8 +152,9 @@ const Img = styled.img`
   transition: all 0.4s ease-in-out;
 
   &:hover {
-    box-shadow: 3px 5px 3px 5px #000;
+    box-shadow: 1px 1px 1px 1px #413d3d;
     transform: scale(1.1);
+    bottom: 20px;
   }
 `;
 
