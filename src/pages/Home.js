@@ -16,6 +16,7 @@ const Home = () => {
     closeImage,
     video,
     watchVideo,
+    closeVideo
   } = useHooks();
 
   useEffect(() => console.log(count), [count]);
@@ -24,7 +25,7 @@ const Home = () => {
     <Div>
       <h4 className="likes-count">{count}</h4>
       {silver ? <SilverPage closeImage={closeImage} /> : null}
-      {video ? <VideoPage /> : null}
+      {video ? <VideoPage closeVideo={closeVideo} /> : null}
       <Img
         src={"/img/silverphones.png"}
         alt=""
@@ -142,6 +143,7 @@ const Div = styled.div`
       outline: none;
       border: 2px solid #fff;
       cursor: pointer;
+
     }
 
     .video-btn {
@@ -154,6 +156,7 @@ const Div = styled.div`
       background: transparent;
       border: 2px solid #fff;
       cursor: pointer;
+      outline:none;
     }
 
     .icon-play {
@@ -180,7 +183,7 @@ const Img = styled.img`
   left: 155px;
   top: 100px;
   border-radius: 200px;
-  border: 1px solid #626367;
+  border: 0.3px solid #626367;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
 

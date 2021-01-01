@@ -52,7 +52,7 @@ const Nav = styled.div`
 
     li {
       list-style: none;
-      padding-right: 50px;
+      padding-right: 80px;
     }
 
     li:nth-child(5) {

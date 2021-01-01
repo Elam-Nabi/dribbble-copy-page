@@ -20,6 +20,10 @@ const watchVideo = () => {
   setVideo(!video);
 }
 
+const closeVideo = () => {
+  setVideo(false)
+}
+
 
     return {
         silver,
@@ -29,7 +33,9 @@ const watchVideo = () => {
         addLikes,
         handleSilver,
         closeImage, 
-        watchVideo
+        watchVideo, 
+        video,
+        closeVideo
     }
 
 }
