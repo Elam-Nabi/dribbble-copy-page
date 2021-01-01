@@ -27,7 +27,7 @@ const GrayPage = () => {
     <Div>
       <h4 className="likes-count">{count}</h4>
       {gray ? <GrayPic closeGrayPic={closeGrayPic} /> : null}
-      {video ? <VideoPage closeVideo={closeVideo} /> : null}
+      {video && <VideoPage closeVideo={closeVideo} />}
       <Img src={"/img/grayphones.png"} alt="" onClick={() => handleGray()} />
       <Section>
         <div className="silver">

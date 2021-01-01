@@ -27,7 +27,7 @@ const Home = () => {
     <Div>
       <h4 className="likes-count">{count}</h4>
       {silver ? <SilverPic closeSilverPic={closeSilverPic} /> : null}
-      {video ? <VideoPage closeVideo={closeVideo} /> : null}
+      {video && <VideoPage closeVideo={closeVideo} />}
       <Img
         src={"/img/silverphones.png"}
         alt=""

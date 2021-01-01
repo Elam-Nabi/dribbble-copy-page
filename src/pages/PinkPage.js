@@ -27,7 +27,7 @@ const PinkPage = () => {
     <Div>
       <h4 className="likes-count">{count}</h4>
       {pink ? <PinkPic closePinkPic={closePinkPic} /> : null}
-      {video ? <VideoPage closeVideo={closeVideo} /> : null}
+      {video && <VideoPage closeVideo={closeVideo} />}
       <Img
         src={"/img/pinkphones.png"}
         alt=""
