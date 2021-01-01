@@ -5,20 +5,20 @@ import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsPlay } from "react-icons/bs";
 
-import SilverPic from "../components/Silver/SilverPic";
+import GrayPic from "../components/Gray/GrayPic";
 import VideoPage from "../components/Video/VideoPage";
 import { useHooks } from "../useHooks";
 
-const Home = () => {
+const GrayPage = () => {
   const {
-    silver,
     count,
     addLikes,
-    handleSilver,
-    closeSilverPic,
+    closeGrayPic,
     video,
     watchVideo,
     closeVideo,
+    handleGray,
+    gray,
   } = useHooks();
 
   useEffect(() => console.log(count), [count]);
@@ -26,13 +26,9 @@ const Home = () => {
   return (
     <Div>
       <h4 className="likes-count">{count}</h4>
-      {silver ? <SilverPic closeSilverPic={closeSilverPic} /> : null}
+      {gray ? <GrayPic closeGrayPic={closeGrayPic} /> : null}
       {video ? <VideoPage closeVideo={closeVideo} /> : null}
-      <Img
-        src={"/img/silverphones.png"}
-        alt=""
-        onClick={() => handleSilver()}
-      />
+      <Img src={"/img/grayphones.png"} alt="" onClick={() => handleGray()} />
       <Section>
         <div className="silver">
           <NavLink to="/" exact>
@@ -74,7 +70,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default GrayPage;
 
 const NavLink = styled(Link)``;
 
@@ -128,8 +124,8 @@ const Div = styled.div`
       height: 50px;
       width: 200px;
       outline: none;
-      color: #494a4d;
-      background: #f2f1ef;
+      color: #fff;
+      background: #747474;
       cursor: pointer;
       border-radius: 20px;
       border: none;
@@ -169,7 +165,7 @@ const Div = styled.div`
     }
 
     .icon-play {
-      color: #000;
+      color: #747474;
       font-size: 45px;
       transition: all 0.4s ease-in-out;
       &:hover {
@@ -178,7 +174,7 @@ const Div = styled.div`
     }
 
     .Icon-heart {
-      color: #000;
+      color: #747474;
       font-size: 32px;
       margin-top: 5px;
       transition: all 0.4s ease-in-out;

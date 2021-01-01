@@ -1,10 +1,21 @@
-import {useContext} from 'react';
-import { GlobalContext } from './useContext';
+import { useContext } from "react";
+import { GlobalContext } from "./useContext";
 
 export const useHooks = () => {
-    const {  silver, setSilver, count, setCount, video, setVideo } = useContext(GlobalContext)
+  const {
+    silver,
+    setSilver,
+    count,
+    setCount,
+    video,
+    setVideo,
+    pink,
+    setPink,
+    gray,
+    setGray,
+  } = useContext(GlobalContext);
 
-    const addLikes = () => {
+  const addLikes = () => {
     setCount(count + 1);
   };
 
@@ -12,30 +23,50 @@ export const useHooks = () => {
     setSilver(!silver);
   };
 
-  const closeImage = () => {
+  const handlePink = () => {
+    setPink(!pink);
+  };
+
+  const handleGray = () => {
+    setGray(!gray);
+  };
+
+  const closeSilverPic = () => {
     setSilver(false);
   };
 
-const watchVideo = () => {
-  setVideo(!video);
-}
+  const closePinkPic = () => {
+    setPink(false);
+  };
 
-const closeVideo = () => {
-  setVideo(false)
-}
+  const closeGrayPic = () => {
+    setGray(false);
+  };
 
+  const watchVideo = () => {
+    setVideo(!video);
+  };
 
-    return {
-        silver,
-        setSilver,
-        count, 
-        setCount,
-        addLikes,
-        handleSilver,
-        closeImage, 
-        watchVideo, 
-        video,
-        closeVideo
-    }
+  const closeVideo = () => {
+    setVideo(false);
+  };
 
-}
+  return {
+    silver,
+    setSilver,
+    count,
+    setCount,
+    addLikes,
+    handleSilver,
+    closeSilverPic,
+    watchVideo,
+    video,
+    closeVideo,
+    pink,
+    setPink,
+    handlePink,
+    closePinkPic,
+    handleGray,
+    closeGrayPic,
+  };
+};

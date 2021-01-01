@@ -3,16 +3,16 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { MdClose } from "react-icons/md";
 
-const SilverPage = ({ closeImage }) => {
+const SilverPage = ({ closeGrayPic }) => {
   return (
     <Div>
       <MdClose
-        onClick={() => closeImage()}
+        onClick={() => closeGrayPic()}
         style={{ fontSize: "30px" }}
         className="close-btn"
       />
       <motion.img
-        src={"/img/silverphones.png"}
+        src={"/img/grayphones.png"}
         alt=""
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

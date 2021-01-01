@@ -56,7 +56,7 @@ const Nav = styled.div`
     }
 
     li:nth-child(5) {
-      color: #fff;
+      color: #000;
       position: absolute;
       left: 920px;
       font-size: 22px;
@@ -64,17 +64,17 @@ const Nav = styled.div`
 
     li:nth-child(6) {
       right: 40px;
-      color: #fff;
+      color: #000;
       position: absolute;
       left: 950px;
       font-size: 22px;
     }
     a {
       text-decoration: none;
-      color: #b5b6b8;
+      color: #000;
       transition: all 0.4s ease-in-out;
       &:hover {
-        color: #fff;
+        color: #000;
       }
     }
   }
@@ -85,7 +85,9 @@ const Nav = styled.div`
   }
 
   .active {
-    color: #fff;
-    text-shadow: -1px -1px 11px rgba(255, 255, 255, 1);
+    color: darkgray;
+    background: #f2f1ef;
+    border: none;
+    border-radius: 5px;
   }
 `;

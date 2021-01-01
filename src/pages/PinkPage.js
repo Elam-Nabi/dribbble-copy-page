@@ -5,20 +5,20 @@ import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsPlay } from "react-icons/bs";
 
-import SilverPic from "../components/Silver/SilverPic";
+import PinkPic from "../components/Pink/PinkPic";
 import VideoPage from "../components/Video/VideoPage";
 import { useHooks } from "../useHooks";
 
-const Home = () => {
+const PinkPage = () => {
   const {
-    silver,
     count,
     addLikes,
-    handleSilver,
-    closeSilverPic,
+    closePinkPic,
     video,
     watchVideo,
     closeVideo,
+    handlePink, 
+    pink
   } = useHooks();
 
   useEffect(() => console.log(count), [count]);
@@ -26,12 +26,12 @@ const Home = () => {
   return (
     <Div>
       <h4 className="likes-count">{count}</h4>
-      {silver ? <SilverPic closeSilverPic={closeSilverPic} /> : null}
+      {pink ? <PinkPic closePinkPic={closePinkPic} /> : null}
       {video ? <VideoPage closeVideo={closeVideo} /> : null}
       <Img
-        src={"/img/silverphones.png"}
+        src={"/img/pinkphones.png"}
         alt=""
-        onClick={() => handleSilver()}
+        onClick={() => handlePink()}
       />
       <Section>
         <div className="silver">
@@ -74,7 +74,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PinkPage;
 
 const NavLink = styled(Link)``;
 
@@ -128,8 +128,8 @@ const Div = styled.div`
       height: 50px;
       width: 200px;
       outline: none;
-      color: #494a4d;
-      background: #f2f1ef;
+      color: #fff;
+      background: #E6564E;
       cursor: pointer;
       border-radius: 20px;
       border: none;
@@ -163,28 +163,28 @@ const Div = styled.div`
       left: 10px;
       border-radius: 25px;
       background: #f2f1ef;
-      border: none;
+      border:none;
       cursor: pointer;
       outline: none;
     }
 
     .icon-play {
-      color: #000;
+      color: #E6564E;
       font-size: 45px;
       transition: all 0.4s ease-in-out;
       &:hover {
-        opacity: 0.3;
+        opacity:0.3;
       }
     }
 
     .Icon-heart {
-      color: #000;
+      color: #E6564E;
       font-size: 32px;
       margin-top: 5px;
       transition: all 0.4s ease-in-out;
 
       &:hover {
-        opacity: 0.3;
+        opacity:0.3;
       }
     }
   }
