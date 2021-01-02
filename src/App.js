@@ -17,6 +17,7 @@ const App = () => {
   const [pink, setPink] = useState(false);
   const [gray, setGray] = useState(false);
   const [video, setVideo] = useState(false);
+  const [cart, setCart] = useState([{}]);
   const [count, setCount] = useState(0);
 
   return (
@@ -32,6 +33,8 @@ const App = () => {
         setPink,
         gray,
         setGray,
+        cart,
+        setCart,
       }}
     >
       <Router>

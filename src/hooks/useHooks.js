@@ -13,6 +13,8 @@ export const useHooks = () => {
     setPink,
     gray,
     setGray,
+    cart,
+    setCart
   } = useContext(GlobalContext);
 
   const addLikes = () => {
@@ -51,6 +53,15 @@ export const useHooks = () => {
     setVideo(false);
   };
 
+  const addToCard = () => {
+    const cartInfo = {
+      name: "AirPods Max True Apple",
+      color: "white",
+      price: "699$"
+    };
+    setCart([...cart, cartInfo])
+  };
+
   return {
     silver,
     setSilver,
@@ -68,5 +79,8 @@ export const useHooks = () => {
     closePinkPic,
     handleGray,
     closeGrayPic,
+    cart, 
+    setCart,
+    addToCard
   };
 };
