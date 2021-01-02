@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GlobalContext } from "./useContext";
+import { GlobalContext } from "../context/useContext";
 
 export const useHooks = () => {
   const {

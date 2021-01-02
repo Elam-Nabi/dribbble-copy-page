@@ -9,7 +9,7 @@ import PinkPage from "./pages/PinkPage";
 import Products from "./pages/Products";
 
 import { AnimatePresence } from "framer-motion";
-import { GlobalContext } from "./useContext";
+import { GlobalContext } from "./context/useContext";
 import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {

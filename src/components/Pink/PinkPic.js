@@ -39,7 +39,7 @@ const Div = styled.div`
     right: 450px;
     top: 30px;
     z-index: 3;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
 
