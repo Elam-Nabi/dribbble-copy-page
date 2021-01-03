@@ -53,6 +53,11 @@ export const useHooks = () => {
     setVideo(false);
   };
 
+  const closeCart = () => {
+    setCart(!cart);
+  };
+
+
   const addToCard = () => {
     const cartInfo = {
       name: "AirPods Max True Apple",
@@ -81,6 +86,7 @@ export const useHooks = () => {
     closeGrayPic,
     cart, 
     setCart,
-    addToCard
+    addToCard,
+    closeCart
   };
 };

@@ -7,7 +7,6 @@ import { BsPlay } from "react-icons/bs";
 
 import SilverPic from "../components/Silver/SilverPic";
 import VideoPage from "../components/Video/VideoPage";
-import Cart from '../components/Cart/Cart'
 import { useHooks } from "../hooks/useHooks";
 
 const Home = () => {
@@ -21,7 +20,6 @@ const Home = () => {
     watchVideo,
     closeVideo,
     addToCard,
-    cart
   } = useHooks();
 
   useEffect(() => console.log(count), [count]);
@@ -31,7 +29,6 @@ const Home = () => {
       <h4 className="likes-count">{count}</h4>
       {silver ? <SilverPic closeSilverPic={closeSilverPic} /> : null}
       {video && <VideoPage closeVideo={closeVideo} />}
-      {cart && <Cart cart={cart} /> }
       <Img
         src={"/img/silverphones.png"}
         alt=""
