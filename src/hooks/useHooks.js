@@ -14,7 +14,8 @@ export const useHooks = () => {
     gray,
     setGray,
     cart,
-    setCart
+    setCart,
+   
   } = useContext(GlobalContext);
 
   const addLikes = () => {
@@ -58,6 +59,8 @@ export const useHooks = () => {
   };
 
 
+
+
   const addToCard = () => {
     const cartInfo = {
       name: "AirPods Max True Apple",
@@ -87,6 +90,6 @@ export const useHooks = () => {
     cart, 
     setCart,
     addToCard,
-    closeCart
+    closeCart,
   };
 };

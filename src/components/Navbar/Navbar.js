@@ -5,6 +5,7 @@ import { useHooks } from "../../hooks/useHooks";
 
 import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
+
 import { BiBasket } from "react-icons/bi";
 import Cart from "../Cart/Cart";
 
@@ -61,15 +62,6 @@ const Nav = styled.div`
     li {
       list-style: none;
       padding-right: 80px;
-
-      .cartinfo {
-        height: 100px;
-        width: 250px;
-        border: 1px solid #000;
-        h5 {
-          font-size: 12px;
-        }
-      }
     }
 
     li:nth-child(5) {

@@ -13,6 +13,7 @@ const Home = () => {
   const {
     silver,
     count,
+    cart,
     addLikes,
     handleSilver,
     closeSilverPic,
@@ -20,13 +21,22 @@ const Home = () => {
     watchVideo,
     closeVideo,
     addToCard,
+    cartCounter,
+    handleCartCounter,
   } = useHooks();
 
-  useEffect(() => console.log(count), [count]);
+  useEffect(() => {
+    console.log(count);
+
+    setTimeout(() => {
+      console.log(cartCounter);
+    }, 2000);
+  }, [count, cartCounter]);
 
   return (
     <Div>
       <h4 className="likes-count">{count}</h4>
+      <h4 className="cart-count">{cart.length}</h4>
       {silver ? <SilverPic closeSilverPic={closeSilverPic} /> : null}
       {video && <VideoPage closeVideo={closeVideo} />}
       <Img
@@ -63,7 +73,9 @@ const Home = () => {
           a perfect balance of exhilarating high-fidelity audio{" "}
           <span>and the effortless magic of AirPods.</span>
         </p>
-        <button className="buy-btn" onClick={() => addToCard()} >Buy now</button>
+        <button className="buy-btn" onClick={() => addToCard()}>
+          Buy now
+        </button>
         <button className="video-btn" onClick={() => watchVideo()}>
           <BsPlay className="icon-play" />
         </button>
@@ -94,6 +106,22 @@ const Div = styled.div`
     font-size: 12px;
     font-weight: bold;
     right: 160px;
+    top: 43px;
+    clip-path: polygon(50% 0, 100% 50%, 50% 700%, 0 50%);
+  }
+
+  .cart-count {
+    position: absolute;
+    text-align: center;
+    color: red;
+    background: #fff;
+    border: 0.3px solid gainsboro;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    right: 130px;
     top: 43px;
     clip-path: polygon(50% 0, 100% 50%, 50% 700%, 0 50%);
   }
