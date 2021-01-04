@@ -62,11 +62,16 @@ export const useHooks = () => {
 
 
   const addToCard = () => {
-    const cartInfo = {
+      const cartInfo = {
       name: "AirPods Max True Apple",
       color: "white",
       price: "699$"
-    };
+    }; 
+    const checkCart = cart.find((c) => c.name === cartInfo.name);
+    if(checkCart) {
+      console.log("You have reached your limit")
+      return
+    }
     setCart([...cart, cartInfo])
   };
 
