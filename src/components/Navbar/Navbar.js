@@ -1,11 +1,17 @@
 import React from "react";
 import { NavLink as Link } from "react-router-dom";
 
+import { useHooks } from "../../hooks/useHooks";
+
 import styled from "styled-components";
 import { IoMdHeartEmpty } from "react-icons/io";
+
 import { BiBasket } from "react-icons/bi";
+import Cart from "../Cart/Cart";
 
 const Navbar = () => {
+  const { cart, closeCart } = useHooks();
+
   return (
     <Nav>
       <ul>
@@ -33,7 +39,10 @@ const Navbar = () => {
           <IoMdHeartEmpty />
         </li>
         <li>
-          <BiBasket />
+          <BiBasket onClick={() => closeCart()} />
+          <div className="cartinfo">
+            <h5>{cart && <Cart cart={cart} />}</h5>
+          </div>
         </li>
       </ul>
     </Nav>
@@ -46,11 +55,12 @@ const NavLink = styled(Link)``;
 const Nav = styled.div`
   margin-top: 20px;
   position: fixed;
-  left: 180px;
+  left: 170px;
+  background: transparent;
   ul {
     display: flex;
-
     li {
+      
       list-style: none;
       padding-right: 80px;
     }
@@ -86,7 +96,6 @@ const Nav = styled.div`
 
   .active {
     color: darkgray;
-    background: #f2f1ef;
     border: none;
     border-radius: 5px;
   }

@@ -7,25 +7,35 @@ import { BsPlay } from "react-icons/bs";
 
 import SilverPic from "../components/Silver/SilverPic";
 import VideoPage from "../components/Video/VideoPage";
-import { useHooks } from "../useHooks";
+import { useHooks } from "../hooks/useHooks";
 
 const Home = () => {
   const {
     silver,
     count,
+    cart,
     addLikes,
     handleSilver,
     closeSilverPic,
     video,
     watchVideo,
     closeVideo,
+    addToCard,
+    cartCounter,
   } = useHooks();
 
-  useEffect(() => console.log(count), [count]);
+  useEffect(() => {
+    console.log(count);
+
+    setTimeout(() => {
+      console.log(cartCounter);
+    }, 2000);
+  }, [count, cartCounter]);
 
   return (
     <Div>
       <h4 className="likes-count">{count}</h4>
+      <h4 className="cart-count">{cart.length}</h4>
       {silver ? <SilverPic closeSilverPic={closeSilverPic} /> : null}
       {video && <VideoPage closeVideo={closeVideo} />}
       <Img
@@ -62,7 +72,9 @@ const Home = () => {
           a perfect balance of exhilarating high-fidelity audio{" "}
           <span>and the effortless magic of AirPods.</span>
         </p>
-        <button className="buy-btn">Buy now</button>
+        <button className="buy-btn" onClick={() => addToCard()}>
+          Buy now
+        </button>
         <button className="video-btn" onClick={() => watchVideo()}>
           <BsPlay className="icon-play" />
         </button>
@@ -93,6 +105,22 @@ const Div = styled.div`
     font-size: 12px;
     font-weight: bold;
     right: 160px;
+    top: 43px;
+    clip-path: polygon(50% 0, 100% 50%, 50% 700%, 0 50%);
+  }
+
+  .cart-count {
+    position: absolute;
+    text-align: center;
+    color: red;
+    background: #fff;
+    border: 0.3px solid gainsboro;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    font-weight: bold;
+    right: 130px;
     top: 43px;
     clip-path: polygon(50% 0, 100% 50%, 50% 700%, 0 50%);
   }
@@ -193,6 +221,7 @@ const Div = styled.div`
 const Img = styled.img`
   width: 390px;
   position: absolute;
+  border-radius: 100px;
   left: 155px;
   top: 100px;
   cursor: pointer;
@@ -216,8 +245,9 @@ const Section = styled.header`
 
   div {
     img {
+      margin-top: 10px;
       border-radius: 50%;
-      width: 60px;
+      width: 30px;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
 
@@ -227,7 +257,7 @@ const Section = styled.header`
     }
     h5 {
       color: #b5b6b8;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
     }
   }

@@ -7,7 +7,7 @@ import { BsPlay } from "react-icons/bs";
 
 import GrayPic from "../components/Gray/GrayPic";
 import VideoPage from "../components/Video/VideoPage";
-import { useHooks } from "../useHooks";
+import { useHooks } from "../hooks/useHooks";
 
 const GrayPage = () => {
   const {
@@ -189,6 +189,7 @@ const Div = styled.div`
 const Img = styled.img`
   width: 390px;
   position: absolute;
+  border-radius: 100px;
   left: 155px;
   top: 100px;
   cursor: pointer;
@@ -212,8 +213,9 @@ const Section = styled.header`
 
   div {
     img {
+      margin-top: 10px;
       border-radius: 50%;
-      width: 60px;
+      width: 30px;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
 
@@ -223,7 +225,7 @@ const Section = styled.header`
     }
     h5 {
       color: #b5b6b8;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
     }
   }

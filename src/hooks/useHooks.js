@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GlobalContext } from "./useContext";
+import { GlobalContext } from "../context/useContext";
 
 export const useHooks = () => {
   const {
@@ -13,6 +13,9 @@ export const useHooks = () => {
     setPink,
     gray,
     setGray,
+    cart,
+    setCart,
+   
   } = useContext(GlobalContext);
 
   const addLikes = () => {
@@ -51,6 +54,27 @@ export const useHooks = () => {
     setVideo(false);
   };
 
+  const closeCart = () => {
+    setCart(!cart);
+  };
+
+
+
+
+  const addToCard = () => {
+      const cartInfo = {
+      name: "AirPods Max True Apple",
+      color: "white",
+      price: "699$"
+    }; 
+    const checkCart = cart.find((c) => c.name === cartInfo.name);
+    if(checkCart) {
+      console.log("You have reached your limit")
+      return
+    }
+    setCart([...cart, cartInfo])
+  };
+
   return {
     silver,
     setSilver,
@@ -68,5 +92,9 @@ export const useHooks = () => {
     closePinkPic,
     handleGray,
     closeGrayPic,
+    cart, 
+    setCart,
+    addToCard,
+    closeCart,
   };
 };
