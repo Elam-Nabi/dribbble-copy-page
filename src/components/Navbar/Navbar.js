@@ -54,12 +54,12 @@ export default Navbar;
 const NavLink = styled(Link)``;
 const Nav = styled.div`
   margin-top: 20px;
-  position: fixed;
+  position: absolute;
   left: 180px;
   ul {
     display: flex;
-
     li {
+      
       list-style: none;
       padding-right: 80px;
     }

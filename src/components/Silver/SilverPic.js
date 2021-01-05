@@ -5,7 +5,7 @@ import {MdClose} from "react-icons/md";
 
 const SilverPage = ({closeSilverPic}) => {
     return (
-        <Div>
+        <Div onClick={() => closeSilverPic()} >
             <MdClose
                 onClick={() => closeSilverPic()}
                 style={{
