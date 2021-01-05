@@ -25,13 +25,6 @@ const Cart = () => {
 export default Cart;
 
 const Div = styled.div`
-  position: absolute;
-  right: 10px;
-  z-index: 5px;
-  height: 100px;
-  width: 200px;
-  left: 100px;
-
   .items {
     display: flex;
     h5 {

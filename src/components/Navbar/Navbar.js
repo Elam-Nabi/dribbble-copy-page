@@ -54,8 +54,9 @@ export default Navbar;
 const NavLink = styled(Link)``;
 const Nav = styled.div`
   margin-top: 20px;
-  position: absolute;
-  left: 180px;
+  position: fixed;
+  left: 170px;
+  background: transparent;
   ul {
     display: flex;
     li {
@@ -95,7 +96,6 @@ const Nav = styled.div`
 
   .active {
     color: darkgray;
-    background: #f2f1ef;
     border: none;
     border-radius: 5px;
   }
