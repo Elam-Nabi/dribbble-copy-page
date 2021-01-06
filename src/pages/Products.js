@@ -26,6 +26,13 @@ const Products = () => {
       image:
         "https://www.elgiganten.se/image/dv_web_D180001002634420/266110/apple-airpods-max-traadloesa-around-ear-hoerlurar-rymdgraa.jpg",
     },
+    {
+      id: "4",
+      name: "Apple iPod Nano 2GB Silver",
+      price: "999$",
+      image:
+        "https://www.bluecity.se/media/catalog/product/cache/d1965454f0be68b50541514a32aa9657/5/6/56914_1.png",
+    },
   ]);
 
   const scrollBottom = () => {
@@ -58,9 +65,9 @@ const Products = () => {
         </h4>
         <BsCaretDown className="point-down" onClick={() => scrollBottom()} />
       </div>
-      <div>
+      <div className="headphones-products">
         {products.map((p) => (
-          <div className="products-container">
+          <div className="product-container">
             <h1>
               <img src={p.image} alt={p.image} />
             </h1>
@@ -120,14 +127,25 @@ const Div = styled.div`
     }
   }
 
-  .products-container {
-    display: block;
-    text-align: center;
-    border: 0.3px solid gainsboro;
-    border-radius: 10px;
-    width: 50%;
-    top: 100px;
+  .headphones-products {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-container {
     margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    width: 45vw;
+    top: 100px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
     .info-container {
       .p-name {
         font-size: 25px;
